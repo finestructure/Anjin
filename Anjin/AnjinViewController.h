@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
-@interface AnjinViewController : UIViewController
+
+@interface AnjinViewController : UIViewController {
+  MKMapView *_mapView;
+}
+
+@property (nonatomic, strong) IBOutlet MKMapView *mapView;
 
 - (IBAction)importTapped:(id)sender;
 

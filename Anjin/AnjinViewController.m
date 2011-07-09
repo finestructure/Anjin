@@ -9,11 +9,12 @@
 #import "AnjinViewController.h"
 
 @implementation AnjinViewController
+@synthesize mapView = _mapView;
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
+#pragma mark - IB Actions
+
+- (IBAction)importTapped:(id)sender {
+  NSLog(@"Import tapped");
 }
 
 #pragma mark - View lifecycle
@@ -26,6 +27,7 @@
 
 - (void)viewDidUnload
 {
+  [self setMapView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -57,10 +59,12 @@
   return YES;
 }
 
-#pragma mark - IB actions
+#pragma mark - Memory Warning
 
-- (IBAction)importTapped:(id)sender {
-  NSLog(@"Import tapped");
+- (void)didReceiveMemoryWarning
+{
+  [super didReceiveMemoryWarning];
+  // Release any cached data, images, etc that aren't in use.
 }
 
 @end
