@@ -8,6 +8,7 @@
 
 #import "AnjinViewController.h"
 #import "Annotation.h"
+#import "NSString+ParsingExtensions.h"
 
 @implementation AnjinViewController
 @synthesize mapView = _mapView;
@@ -39,6 +40,15 @@
 - (IBAction)importTapped:(id)sender {
   NSLog(@"Import tapped");
   [self pinForAddress:@"An der Grüngesweide 8, Eschborn, Germany" withTitle:@"Nadia" subtitle:@"Die Süße"];
+  NSBundle *thisBundle = [NSBundle bundleForClass:[self class]];
+  NSURL *url = [thisBundle URLForResource:@"kunden" withExtension:@"csv"];
+
+  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    NSError *error = nil;
+    NSString *data = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
+    NSArray *objs = [data csvRowsWithSeparator:@";"];
+    NSLog(@"count: %d", [objs count]);
+  });
 }
 
 #pragma mark - View lifecycle
