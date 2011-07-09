@@ -15,8 +15,9 @@
 }
 
 @property (nonatomic, strong) IBOutlet MKMapView *mapView;
-@property (nonatomic, strong) CLGeocoder *geocoder;
 
 - (IBAction)importTapped:(id)sender;
+
+- (void)pinForAddress:(NSString *)address withTitle:(NSString *)title subtitle:(NSString *)subtitle;
 
 @end

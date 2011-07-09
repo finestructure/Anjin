@@ -12,19 +12,20 @@
 
 @implementation AnjinViewController
 @synthesize mapView = _mapView;
-@synthesize geocoder = _geocoder;
 
 #pragma mark - Helpers
 
 
 - (void)pinForAddress:(NSString *)address withTitle:(NSString *)title subtitle:(NSString *)subtitle {
-  [self.geocoder geocodeAddressString:address completionHandler:^(NSArray *__strong placemarks, NSError *__strong error) {
-    NSLog(@"Placemarks: %d", [placemarks count]);
+  NSLog(@"address: %@", address);
+  CLGeocoder *coder = [[CLGeocoder alloc] init];
+  [coder geocodeAddressString:address completionHandler:^(NSArray *__strong placemarks, NSError *__strong error) {
     if (error != nil) {
       UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Geocoding Error" message:[error localizedDescription] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-      [alert show];
+      //[alert show];
     } else if ([placemarks count] > 0) {
       CLPlacemark *best = [placemarks objectAtIndex:0];
+      NSLog(@"Best placemark: %@", best);
       Annotation *a = [[Annotation alloc] init];
       a.title = title;
       a.subtitle = subtitle;
@@ -39,7 +40,9 @@
 
 - (IBAction)importTapped:(id)sender {
   NSLog(@"Import tapped");
-  [self pinForAddress:@"An der Grüngesweide 8, Eschborn, Germany" withTitle:@"Nadia" subtitle:@"Die Süße"];
+//  [self pinForAddress:@"An der Grüngesweide 8, Eschborn, Germany" withTitle:@"Nadia" subtitle:@"Die Süße"];
+//  [self pinForAddress:@"Obere Kirchstr 7, Martinsthal, Germany" withTitle:@"Sven" subtitle:@"Hase"];
+  
   NSBundle *thisBundle = [NSBundle bundleForClass:[self class]];
   NSURL *url = [thisBundle URLForResource:@"kunden" withExtension:@"csv"];
 
@@ -48,6 +51,15 @@
     NSString *data = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
     NSArray *objs = [data arrayWithSeparator:@";"];
     NSLog(@"count: %d", [objs count]);
+    [objs enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL *stop) {
+      NSMutableString *address = [NSMutableString stringWithString:[obj objectForKey:@"Adresse"]];
+      [address appendString:@", "];
+      [address appendString:[obj objectForKey:@"PLZ"]];
+      [address appendString:@" "];
+      [address appendString:[obj objectForKey:@"Ort"]];
+      [address appendString:@", Germany"];
+      [self pinForAddress:address withTitle:[obj objectForKey:@"Name"] subtitle:[obj objectForKey:@"Ansprechpartner"]];
+    }];
   });
 }
 
@@ -55,8 +67,6 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-
-  self.geocoder = [[CLGeocoder alloc] init];
 }
 
 - (void)viewDidUnload
