@@ -57,4 +57,10 @@
   return YES;
 }
 
+#pragma mark - IB actions
+
+- (IBAction)importTapped:(id)sender {
+  NSLog(@"Import tapped");
+}
+
 @end

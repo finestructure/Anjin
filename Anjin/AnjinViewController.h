@@ -10,4 +10,6 @@
 
 @interface AnjinViewController : UIViewController
 
+- (IBAction)importTapped:(id)sender;
+
 @end
