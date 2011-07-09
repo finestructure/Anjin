@@ -1,0 +1,285 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5ABE343C13C85C21009535AE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ABE343B13C85C21009535AE /* UIKit.framework */; };
+		5ABE343E13C85C21009535AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ABE343D13C85C21009535AE /* Foundation.framework */; };
+		5ABE344013C85C21009535AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ABE343F13C85C21009535AE /* CoreGraphics.framework */; };
+		5ABE344613C85C21009535AE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5ABE344413C85C21009535AE /* InfoPlist.strings */; };
+		5ABE344813C85C21009535AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABE344713C85C21009535AE /* main.m */; };
+		5ABE344C13C85C21009535AE /* AnjinAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABE344B13C85C21009535AE /* AnjinAppDelegate.m */; };
+		5ABE344E13C85C21009535AE /* AnjinViewController.h in Resources */ = {isa = PBXBuildFile; fileRef = 5ABE344D13C85C21009535AE /* AnjinViewController.h */; };
+		5ABE345013C85C21009535AE /* AnjinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABE344F13C85C21009535AE /* AnjinViewController.m */; };
+		5ABE345313C85C21009535AE /* AnjinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ABE345113C85C21009535AE /* AnjinViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5ABE343713C85C21009535AE /* Anjin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Anjin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5ABE343B13C85C21009535AE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5ABE343D13C85C21009535AE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5ABE343F13C85C21009535AE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5ABE344313C85C21009535AE /* Anjin-Info.plist */ = {isa = PBXFileReference; path = "Anjin-Info.plist"; sourceTree = "<group>"; };
+		5ABE344513C85C21009535AE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5ABE344713C85C21009535AE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5ABE344913C85C21009535AE /* Anjin-Prefix.pch */ = {isa = PBXFileReference; path = "Anjin-Prefix.pch"; sourceTree = "<group>"; };
+		5ABE344A13C85C21009535AE /* AnjinAppDelegate.h */ = {isa = PBXFileReference; path = AnjinAppDelegate.h; sourceTree = "<group>"; };
+		5ABE344B13C85C21009535AE /* AnjinAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnjinAppDelegate.m; sourceTree = "<group>"; };
+		5ABE344D13C85C21009535AE /* AnjinViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnjinViewController.h; sourceTree = "<group>"; };
+		5ABE344F13C85C21009535AE /* AnjinViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnjinViewController.m; sourceTree = "<group>"; };
+		5ABE345213C85C21009535AE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/AnjinViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5ABE343413C85C21009535AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5ABE343C13C85C21009535AE /* UIKit.framework in Frameworks */,
+				5ABE343E13C85C21009535AE /* Foundation.framework in Frameworks */,
+				5ABE344013C85C21009535AE /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5ABE342C13C85C20009535AE = {
+			isa = PBXGroup;
+			children = (
+				5ABE344113C85C21009535AE /* Anjin */,
+				5ABE343A13C85C21009535AE /* Frameworks */,
+				5ABE343813C85C21009535AE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5ABE343813C85C21009535AE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5ABE343713C85C21009535AE /* Anjin.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5ABE343A13C85C21009535AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5ABE343B13C85C21009535AE /* UIKit.framework */,
+				5ABE343D13C85C21009535AE /* Foundation.framework */,
+				5ABE343F13C85C21009535AE /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5ABE344113C85C21009535AE /* Anjin */ = {
+			isa = PBXGroup;
+			children = (
+				5ABE344A13C85C21009535AE /* AnjinAppDelegate.h */,
+				5ABE344B13C85C21009535AE /* AnjinAppDelegate.m */,
+				5ABE344D13C85C21009535AE /* AnjinViewController.h */,
+				5ABE344F13C85C21009535AE /* AnjinViewController.m */,
+				5ABE345113C85C21009535AE /* AnjinViewController.xib */,
+				5ABE344213C85C21009535AE /* Supporting Files */,
+			);
+			path = Anjin;
+			sourceTree = "<group>";
+		};
+		5ABE344213C85C21009535AE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5ABE344313C85C21009535AE /* Anjin-Info.plist */,
+				5ABE344413C85C21009535AE /* InfoPlist.strings */,
+				5ABE344713C85C21009535AE /* main.m */,
+				5ABE344913C85C21009535AE /* Anjin-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5ABE343613C85C21009535AE /* Anjin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5ABE345613C85C21009535AE /* Build configuration list for PBXNativeTarget "Anjin" */;
+			buildPhases = (
+				5ABE343313C85C21009535AE /* Sources */,
+				5ABE343413C85C21009535AE /* Frameworks */,
+				5ABE343513C85C21009535AE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Anjin;
+			productName = Anjin;
+			productReference = 5ABE343713C85C21009535AE /* Anjin.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5ABE342E13C85C20009535AE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "abstracture GmbH & Co. KG";
+			};
+			buildConfigurationList = 5ABE343113C85C20009535AE /* Build configuration list for PBXProject "Anjin" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5ABE342C13C85C20009535AE;
+			productRefGroup = 5ABE343813C85C21009535AE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5ABE343613C85C21009535AE /* Anjin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5ABE343513C85C21009535AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5ABE344613C85C21009535AE /* InfoPlist.strings in Resources */,
+				5ABE344E13C85C21009535AE /* AnjinViewController.h in Resources */,
+				5ABE345313C85C21009535AE /* AnjinViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5ABE343313C85C21009535AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5ABE344813C85C21009535AE /* main.m in Sources */,
+				5ABE344C13C85C21009535AE /* AnjinAppDelegate.m in Sources */,
+				5ABE345013C85C21009535AE /* AnjinViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5ABE344413C85C21009535AE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5ABE344513C85C21009535AE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5ABE345113C85C21009535AE /* AnjinViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5ABE345213C85C21009535AE /* en */,
+			);
+			name = AnjinViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5ABE345413C85C21009535AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		5ABE345513C85C21009535AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5ABE345713C85C21009535AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Anjin/Anjin-Prefix.pch";
+				INFOPLIST_FILE = "Anjin/Anjin-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5ABE345813C85C21009535AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Anjin/Anjin-Prefix.pch";
+				INFOPLIST_FILE = "Anjin/Anjin-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5ABE343113C85C20009535AE /* Build configuration list for PBXProject "Anjin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5ABE345413C85C21009535AE /* Debug */,
+				5ABE345513C85C21009535AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5ABE345613C85C21009535AE /* Build configuration list for PBXNativeTarget "Anjin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5ABE345713C85C21009535AE /* Debug */,
+				5ABE345813C85C21009535AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5ABE342E13C85C20009535AE /* Project object */;
+}
