@@ -17,6 +17,8 @@
 		5ABE345013C85C21009535AE /* AnjinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABE344F13C85C21009535AE /* AnjinViewController.m */; };
 		5ABE345313C85C21009535AE /* AnjinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ABE345113C85C21009535AE /* AnjinViewController.xib */; };
 		5ABE345E13C85EBA009535AE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ABE345D13C85EBA009535AE /* MapKit.framework */; };
+		5ABE346013C861B0009535AE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ABE345F13C861B0009535AE /* CoreLocation.framework */; };
+		5ABE346313C8628E009535AE /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABE346213C8628E009535AE /* Annotation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,9 @@
 		5ABE344F13C85C21009535AE /* AnjinViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnjinViewController.m; sourceTree = "<group>"; };
 		5ABE345213C85C21009535AE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/AnjinViewController.xib; sourceTree = "<group>"; };
 		5ABE345D13C85EBA009535AE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		5ABE345F13C861B0009535AE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		5ABE346113C8628E009535AE /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotation.h; sourceTree = "<group>"; };
+		5ABE346213C8628E009535AE /* Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Annotation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ABE346013C861B0009535AE /* CoreLocation.framework in Frameworks */,
 				5ABE345E13C85EBA009535AE /* MapKit.framework in Frameworks */,
 				5ABE343C13C85C21009535AE /* UIKit.framework in Frameworks */,
 				5ABE343E13C85C21009535AE /* Foundation.framework in Frameworks */,
@@ -54,6 +60,7 @@
 		5ABE342C13C85C20009535AE = {
 			isa = PBXGroup;
 			children = (
+				5ABE345F13C861B0009535AE /* CoreLocation.framework */,
 				5ABE345D13C85EBA009535AE /* MapKit.framework */,
 				5ABE344113C85C21009535AE /* Anjin */,
 				5ABE343A13C85C21009535AE /* Frameworks */,
@@ -87,6 +94,8 @@
 				5ABE344D13C85C21009535AE /* AnjinViewController.h */,
 				5ABE344F13C85C21009535AE /* AnjinViewController.m */,
 				5ABE345113C85C21009535AE /* AnjinViewController.xib */,
+				5ABE346113C8628E009535AE /* Annotation.h */,
+				5ABE346213C8628E009535AE /* Annotation.m */,
 				5ABE344213C85C21009535AE /* Supporting Files */,
 			);
 			path = Anjin;
@@ -169,6 +178,7 @@
 				5ABE344813C85C21009535AE /* main.m in Sources */,
 				5ABE344C13C85C21009535AE /* AnjinAppDelegate.m in Sources */,
 				5ABE345013C85C21009535AE /* AnjinViewController.m in Sources */,
+				5ABE346313C8628E009535AE /* Annotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

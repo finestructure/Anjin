@@ -15,6 +15,7 @@
 }
 
 @property (nonatomic, strong) IBOutlet MKMapView *mapView;
+@property (nonatomic, strong) CLGeocoder *geocoder;
 
 - (IBAction)importTapped:(id)sender;
 

@@ -7,22 +7,46 @@
 //
 
 #import "AnjinViewController.h"
+#import "Annotation.h"
 
 @implementation AnjinViewController
 @synthesize mapView = _mapView;
+@synthesize geocoder = _geocoder;
+
+#pragma mark - Helpers
+
+
+- (void)pinForAddress:(NSString *)address withTitle:(NSString *)title subtitle:(NSString *)subtitle {
+  [self.geocoder geocodeAddressString:address completionHandler:^(NSArray *__strong placemarks, NSError *__strong error) {
+    NSLog(@"Placemarks: %d", [placemarks count]);
+    if (error != nil) {
+      UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Geocoding Error" message:[error localizedDescription] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+      [alert show];
+    } else if ([placemarks count] > 0) {
+      CLPlacemark *best = [placemarks objectAtIndex:0];
+      Annotation *a = [[Annotation alloc] init];
+      a.title = title;
+      a.subtitle = subtitle;
+      a.coordinate = best.location.coordinate;
+      [self.mapView addAnnotation:a];
+    }
+  }];
+}
+
 
 #pragma mark - IB Actions
 
 - (IBAction)importTapped:(id)sender {
   NSLog(@"Import tapped");
+  [self pinForAddress:@"An der Grüngesweide 8, Eschborn, Germany" withTitle:@"Nadia" subtitle:@"Die Süße"];
 }
 
 #pragma mark - View lifecycle
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+- (void)viewDidLoad {
+  [super viewDidLoad];
+
+  self.geocoder = [[CLGeocoder alloc] init];
 }
 
 - (void)viewDidUnload
