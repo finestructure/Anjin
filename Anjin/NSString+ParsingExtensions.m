@@ -10,73 +10,57 @@
 
 @implementation NSString (ParsingExtensions)
 
--(NSArray *)csvRowsWithSeparator:(NSString *)separator {
-  NSMutableArray *rows = [NSMutableArray array];
+/*"    Build an array of dictionaries from a TSV (tab-separated
+ values) string.  Blank lines and lines starting with "#" are
+ ignored.  The first non-empty, non-comment line is assumed to be
+ the keys.  Empty lines are not added to the array, so blank
+ lines (or lines with just tabs) are safely ignored.  Missing
+ items aren't added to the dictionary.  The string is assumed to
+ be separated with UNIX newlines only.
+ "*/
+
+- (NSArray *) arrayWithSeparator:(NSString *)separator
+{
+  NSMutableArray *result = [NSMutableArray array];
+  NSArray  *lines  = [self componentsSeparatedByString:@"\n"];
+  NSEnumerator*theEnum = [lines objectEnumerator];
+  NSArray  *keys  = nil;
+  int  keyCount = 0;
+  NSString *theLine;
   
-  // Get newline character set
-  NSMutableCharacterSet *newlineCharacterSet = (id)[NSMutableCharacterSet whitespaceAndNewlineCharacterSet];
-  [newlineCharacterSet formIntersectionWithCharacterSet:[[NSCharacterSet whitespaceCharacterSet] invertedSet]];
-  
-  // Characters that are important to the parser
-  NSMutableCharacterSet *importantCharactersSet = (id)[NSMutableCharacterSet characterSetWithCharactersInString:@"\""];
-  [importantCharactersSet addCharactersInString:separator];
-  [importantCharactersSet formUnionWithCharacterSet:newlineCharacterSet];
-  
-  // Create scanner, and scan string
-  NSScanner *scanner = [NSScanner scannerWithString:self];
-  [scanner setCharactersToBeSkipped:nil];
-  while ( ![scanner isAtEnd] ) {        
-    BOOL insideQuotes = NO;
-    BOOL finishedRow = NO;
-    NSMutableArray *columns = [NSMutableArray arrayWithCapacity:10];
-    NSMutableString *currentColumn = [NSMutableString string];
-    while ( !finishedRow ) {
-      NSString *tempString;
-      if ( [scanner scanUpToCharactersFromSet:importantCharactersSet intoString:&tempString] ) {
-        [currentColumn appendString:tempString];
+  while (nil != (theLine = [theEnum nextObject]) )
+  {
+    if (![theLine isEqualToString:@""] && ![theLine
+                                            hasPrefix:@"#"])    // ignore empty lines and lines that start with #
+    {
+      if (nil == keys) // Is keys not set yet? If so, process first real line as list of keys
+      {
+        keys = [theLine componentsSeparatedByString:separator];
+        keyCount = [keys count];
       }
-      
-      if ( [scanner isAtEnd] ) {
-        if ( ![currentColumn isEqualToString:@""] ) [columns addObject:currentColumn];
-        finishedRow = YES;
-      }
-      else if ( [scanner scanCharactersFromSet:newlineCharacterSet intoString:&tempString] ) {
-        if ( insideQuotes ) {
-          // Add line break to column text
-          [currentColumn appendString:tempString];
+      else // A data line
+      {
+        NSMutableDictionary *lineDict = [NSMutableDictionary dictionary];
+        NSArray    *values  = [theLine componentsSeparatedByString:separator];
+        int    valueCount = [values count];
+        int i;
+        
+        for ( i = 0 ; i < keyCount && i < valueCount ; i++ )
+        {
+          NSString *value = [values objectAtIndex:i];
+          if (nil != value && ![value isEqualToString:@""])
+          {
+            [lineDict setObject:value forKey:[keys objectAtIndex:i]];
+          }
         }
-        else {
-          // End of row
-          if ( ![currentColumn isEqualToString:@""] ) [columns addObject:currentColumn];
-          finishedRow = YES;
-        }
-      }
-      else if ( [scanner scanString:@"\"" intoString:NULL] ) {
-        if ( insideQuotes && [scanner scanString:@"\"" intoString:NULL] ) {
-          // Replace double quotes with a single quote in the column string.
-          [currentColumn appendString:@"\""]; 
-        }
-        else {
-          // Start or end of a quoted string.
-          insideQuotes = !insideQuotes;
-        }
-      }
-      else if ( [scanner scanString:@"," intoString:NULL] ) {  
-        if ( insideQuotes ) {
-          [currentColumn appendString:@","];
-        }
-        else {
-          // This is a column separating comma
-          [columns addObject:currentColumn];
-          currentColumn = [NSMutableString string];
-          [scanner scanCharactersFromSet:[NSCharacterSet whitespaceCharacterSet] intoString:NULL];
+        if ([lineDict count]) // only add the line if there was any data
+        {
+          [result addObject:lineDict];
         }
       }
     }
-    if ( [columns count] > 0 ) [rows addObject:columns];
   }
-  
-  return rows;
+  return result;
 }
 
 @end

@@ -10,6 +10,6 @@
 
 @interface NSString (ParsingExtensions)
 
--(NSArray *)csvRowsWithSeparator:(NSString *)separator;
+- (NSArray *) arrayWithSeparator:(NSString *)separator;
 
 @end

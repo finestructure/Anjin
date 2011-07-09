@@ -7,6 +7,8 @@
 //
 
 #import "Test.h"
+#import "NSString+ParsingExtensions.h"
+
 
 @implementation Test
 
@@ -24,9 +26,20 @@
     [super tearDown];
 }
 
-- (void)testExample
-{
-    STFail(@"Unit tests are not implemented yet in Test");
+- (void)testParsing {
+  NSBundle *thisBundle = [NSBundle bundleForClass:[self class]];
+  NSURL *url = [thisBundle URLForResource:@"kunden" withExtension:@"csv"];
+  STAssertNotNil(url, @"url must not be nil");
+  
+  NSError *error = nil;
+  NSString *data = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
+  STAssertNotNil(data, @"data must not be nil");
+
+  //NSArray *objs = [data csvRowsWithSeparator:@";"];
+  NSArray *objs = [data arrayWithSeparator:@";"];
+  STAssertEquals(36u, [objs count], @"objs count");
+  
+
 }
 
 @end
