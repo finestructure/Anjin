@@ -7,7 +7,7 @@
 //
 
 #import "Test.h"
-#import "NSString+ParsingExtensions.h"
+#import "CSVParser.h"
 
 
 @implementation Test
@@ -21,9 +21,10 @@
   NSError *error = nil;
   NSString *data = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
   STAssertNotNil(data, @"data must not be nil");
-
-  //NSArray *objs = [data csvRowsWithSeparator:@";"];
-  NSArray *objs = [data arrayWithSeparator:@";"];
+  
+  CSVParser *parser = [[CSVParser alloc] initWithString:data separator:@";" hasHeader:YES fieldNames:nil];
+  
+  NSArray *objs = [parser arrayOfParsedRows];
   STAssertEquals(36u, [objs count], @"objs count");
   STAssertEqualObjects(@"Wadgassen", [[objs objectAtIndex:0] objectForKey:@"Ort"], @"value for 'Ort'");
 }
@@ -38,8 +39,9 @@
   NSString *data = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
   STAssertNotNil(data, @"data must not be nil");
   
-  //NSArray *objs = [data csvRowsWithSeparator:@";"];
-  NSArray *objs = [data arrayWithSeparator:@";"];
+  CSVParser *parser = [[CSVParser alloc] initWithString:data separator:@";" hasHeader:YES fieldNames:nil];
+  
+  NSArray *objs = [parser arrayOfParsedRows];
   STAssertEquals(36u, [objs count], @"objs count");
   STAssertEqualObjects(@"Wadgassen", [[objs objectAtIndex:0] objectForKey:@"Ort"], @"value for 'Ort'");
 }
@@ -54,8 +56,9 @@
   NSString *data = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
   STAssertNotNil(data, @"data must not be nil");
   
-  //NSArray *objs = [data csvRowsWithSeparator:@";"];
-  NSArray *objs = [data arrayWithSeparator:@";"];
+  CSVParser *parser = [[CSVParser alloc] initWithString:data separator:@";" hasHeader:YES fieldNames:nil];
+  
+  NSArray *objs = [parser arrayOfParsedRows];
   STAssertEquals(36u, [objs count], @"objs count");
   STAssertEqualObjects(@"Wadgassen", [[objs objectAtIndex:0] objectForKey:@"Ort"], @"value for 'Ort'");
 }

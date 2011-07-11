@@ -11,6 +11,8 @@
 		5A7BC7AF13CB193300DBBA5A /* MyAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7BC7AE13CB193300DBBA5A /* MyAnnotationView.m */; };
 		5A990DF413CB4D9C0068C589 /* kunden_mac.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5A990DF313CB4D9C0068C589 /* kunden_mac.csv */; };
 		5A990DF613CB50C30068C589 /* kunden_win.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5A990DF513CB50C30068C589 /* kunden_win.csv */; };
+		5A990DFD13CB565F0068C589 /* CSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A990DFC13CB565F0068C589 /* CSVParser.m */; };
+		5A990DFE13CB565F0068C589 /* CSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A990DFC13CB565F0068C589 /* CSVParser.m */; };
 		5ABE343C13C85C21009535AE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ABE343B13C85C21009535AE /* UIKit.framework */; };
 		5ABE343E13C85C21009535AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ABE343D13C85C21009535AE /* Foundation.framework */; };
 		5ABE344013C85C21009535AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ABE343F13C85C21009535AE /* CoreGraphics.framework */; };
@@ -23,7 +25,6 @@
 		5ABE345E13C85EBA009535AE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ABE345D13C85EBA009535AE /* MapKit.framework */; };
 		5ABE346013C861B0009535AE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ABE345F13C861B0009535AE /* CoreLocation.framework */; };
 		5ABE346313C8628E009535AE /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABE346213C8628E009535AE /* Annotation.m */; };
-		5ABE346613C8687E009535AE /* NSString+ParsingExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABE346513C8687E009535AE /* NSString+ParsingExtensions.m */; };
 		5ABE347313C86D6E009535AE /* kunden.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5ABE347213C86D6E009535AE /* kunden.csv */; };
 		5ABE347E13C86EFE009535AE /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ABE347D13C86EFE009535AE /* SenTestingKit.framework */; };
 		5ABE347F13C86EFE009535AE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ABE343B13C85C21009535AE /* UIKit.framework */; };
@@ -33,7 +34,6 @@
 		5ABE348913C86EFE009535AE /* Test.h in Resources */ = {isa = PBXBuildFile; fileRef = 5ABE348813C86EFE009535AE /* Test.h */; };
 		5ABE348B13C86EFE009535AE /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABE348A13C86EFE009535AE /* Test.m */; };
 		5ABE349013C8709B009535AE /* kunden.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5ABE347213C86D6E009535AE /* kunden.csv */; };
-		5ABE349113C870BD009535AE /* NSString+ParsingExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABE346513C8687E009535AE /* NSString+ParsingExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +42,8 @@
 		5A7BC7AE13CB193300DBBA5A /* MyAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnnotationView.m; sourceTree = "<group>"; };
 		5A990DF313CB4D9C0068C589 /* kunden_mac.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = kunden_mac.csv; sourceTree = "<group>"; };
 		5A990DF513CB50C30068C589 /* kunden_win.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = kunden_win.csv; sourceTree = "<group>"; };
+		5A990DFB13CB565F0068C589 /* CSVParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSVParser.h; sourceTree = "<group>"; };
+		5A990DFC13CB565F0068C589 /* CSVParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSVParser.m; sourceTree = "<group>"; };
 		5ABE343713C85C21009535AE /* Anjin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Anjin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ABE343B13C85C21009535AE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5ABE343D13C85C21009535AE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -59,8 +61,6 @@
 		5ABE345F13C861B0009535AE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		5ABE346113C8628E009535AE /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotation.h; sourceTree = "<group>"; };
 		5ABE346213C8628E009535AE /* Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Annotation.m; sourceTree = "<group>"; };
-		5ABE346413C8687E009535AE /* NSString+ParsingExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ParsingExtensions.h"; sourceTree = "<group>"; };
-		5ABE346513C8687E009535AE /* NSString+ParsingExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ParsingExtensions.m"; sourceTree = "<group>"; };
 		5ABE347213C86D6E009535AE /* kunden.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = kunden.csv; sourceTree = "<group>"; };
 		5ABE347C13C86EFE009535AE /* Test.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Test.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ABE347D13C86EFE009535AE /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -145,8 +145,8 @@
 				5A7BC7AD13CB193300DBBA5A /* MyAnnotationView.h */,
 				5A7BC7AE13CB193300DBBA5A /* MyAnnotationView.m */,
 				5ABE344213C85C21009535AE /* Supporting Files */,
-				5ABE346413C8687E009535AE /* NSString+ParsingExtensions.h */,
-				5ABE346513C8687E009535AE /* NSString+ParsingExtensions.m */,
+				5A990DFB13CB565F0068C589 /* CSVParser.h */,
+				5A990DFC13CB565F0068C589 /* CSVParser.m */,
 			);
 			path = Anjin;
 			sourceTree = "<group>";
@@ -300,8 +300,8 @@
 				5ABE344C13C85C21009535AE /* AnjinAppDelegate.m in Sources */,
 				5ABE345013C85C21009535AE /* AnjinViewController.m in Sources */,
 				5ABE346313C8628E009535AE /* Annotation.m in Sources */,
-				5ABE346613C8687E009535AE /* NSString+ParsingExtensions.m in Sources */,
 				5A7BC7AF13CB193300DBBA5A /* MyAnnotationView.m in Sources */,
+				5A990DFD13CB565F0068C589 /* CSVParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,7 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5ABE348B13C86EFE009535AE /* Test.m in Sources */,
-				5ABE349113C870BD009535AE /* NSString+ParsingExtensions.m in Sources */,
+				5A990DFE13CB565F0068C589 /* CSVParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

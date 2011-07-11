@@ -9,7 +9,6 @@
 #import "AnjinViewController.h"
 #import "Annotation.h"
 #import "MyAnnotationView.h"
-#import "NSString+ParsingExtensions.h"
 
 @implementation AnjinViewController
 @synthesize mapView = _mapView;
@@ -55,7 +54,7 @@
   dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
     NSError *error = nil;
     NSString *data = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
-    NSArray *objs = [data arrayWithSeparator:@";"];
+    NSArray *objs = [NSArray array];//[data arrayWithSeparator:@";"];
     NSLog(@"count: %d", [objs count]);
     [objs enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL *stop) {
       NSMutableString *address = [NSMutableString stringWithString:[obj objectForKey:@"Adresse"]];
