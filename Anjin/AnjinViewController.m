@@ -81,13 +81,12 @@
   
   // Handle any custom annotations.
   if ([annotation isKindOfClass:[Annotation class]]) {
-    MKPinAnnotationView* pinView = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
-    
-    if (!pinView) {
-      pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomPinAnnotationView"];
-      pinView.pinColor = MKPinAnnotationColorGreen;
-      pinView.animatesDrop = YES;
-      pinView.canShowCallout = YES;
+    MKAnnotationView* pin = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"MyCustomAnnotation"];
+    pin.image = [UIImage imageNamed:@"pin.png"];
+    pin.centerOffset = CGPointMake(5, -10);
+
+    if (!pin) {
+      pin = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"MyCustomAnnotation"];
       
       // Add a detail disclosure button to the callout.
 //      UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
@@ -95,10 +94,10 @@
 //            forControlEvents:UIControlEventTouchUpInside];
 //      pinView.rightCalloutAccessoryView = rightButton;
     } else {
-      pinView.annotation = annotation;
+      pin.annotation = annotation;
     }
     
-    return pinView;
+    return pin;
   }
   
   return nil;
