@@ -21,8 +21,13 @@
   CLGeocoder *coder = [[CLGeocoder alloc] init];
   [coder geocodeAddressString:address completionHandler:^(NSArray *__strong placemarks, NSError *__strong error) {
     if (error != nil) {
-      UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Geocoding Error" message:[error localizedDescription] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+      //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Geocoding Error" message:[error localizedDescription] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
       //[alert show];
+      if ([error code] == kCLErrorGeocodeFoundNoResult) {
+        NSLog(@"*** no result found *** (for: %@)", address);
+      } else {
+        NSLog(@"geocoding error: %@", [error localizedDescription]);
+      }
     } else if ([placemarks count] > 0) {
       CLPlacemark *best = [placemarks objectAtIndex:0];
       NSLog(@"Best placemark: %@", best);
