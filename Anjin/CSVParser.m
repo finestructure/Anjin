@@ -96,29 +96,18 @@
 	return result;
 }
 
-//
-// parseRowsForReceiver:selector:
-//
-// Performs a parsing of the csvString, sending the entries, 1 row at a time,
-// to the receiver.
-//
-// Parameters:
-//    aReceiver - the target that will receive each row as it is parsed
-//    aSelector - the selector that will receive each row as it is parsed
-//		(should be a method that takes a single NSDictionary argument)
-//
-- (void)parseRowsForReceiver:(id)aReceiver selector:(SEL)aSelector
-{
-	scanner = [[NSScanner alloc] initWithString:csvString];
+
+- (void)parseRowsUsingBlock:(void (^)(NSDictionary *record))aBlock {
+  scanner = [[NSScanner alloc] initWithString:csvString];
 	[scanner setCharactersToBeSkipped:[[NSCharacterSet alloc] init]];
-	receiver = aReceiver;
-	receiverSelector = aSelector;
-	
+  block = aBlock;
+  
 	[self parseFile];
 	
 	scanner = nil;
-	receiver = nil;
+  block = nil;
 }
+
 
 //
 // parseFile
@@ -141,7 +130,7 @@
 	}
 	
 	NSMutableArray *records = nil;
-	if (!receiver)
+	if (!block)
 	{
 		records = [NSMutableArray array];
 	}
@@ -156,9 +145,9 @@
 	{
 		@autoreleasepool {
 			
-			if (receiver)
+			if (block)
 			{
-				[receiver performSelector:receiverSelector withObject:record];
+				block(record);
 			}
 			else
 			{

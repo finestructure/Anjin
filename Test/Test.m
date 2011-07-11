@@ -64,4 +64,22 @@
 }
 
 
+- (void)test_parseRowsUsingBlock {
+  NSBundle *thisBundle = [NSBundle bundleForClass:[self class]];
+  NSURL *url = [thisBundle URLForResource:@"kunden_mac" withExtension:@"csv"];
+  NSError *error = nil;
+  NSString *data = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
+  STAssertNotNil(data, @"data must not be nil");
+  
+  CSVParser *parser = [[CSVParser alloc] initWithString:data separator:@";" hasHeader:YES fieldNames:nil];
+  __block NSUInteger count = 0;
+  [parser parseRowsUsingBlock:^(NSDictionary *record) {
+    NSLog(@"record: %@", record);
+    STAssertNotNil([record objectForKey:@"Ort"], @"'Ort' must not be nil");
+    count++;
+  }];
+  STAssertEquals(36u, count, @"wrong row count");
+}
+
+
 @end

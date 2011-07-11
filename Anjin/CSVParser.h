@@ -21,6 +21,7 @@
 //     distribution.
 //
 
+typedef void (^ParseRowsBlock)(NSDictionary *);
 
 @interface CSVParser : NSObject
 {
@@ -29,10 +30,9 @@
 	NSScanner *scanner;
 	BOOL hasHeader;
 	NSMutableArray *fieldNames;
-	id receiver;
-	SEL receiverSelector;
 	NSCharacterSet *endTextCharacterSet;
 	BOOL separatorIsSingleChar;
+  ParseRowsBlock block;
 }
 
 - (id)initWithString:(NSString *)aCSVString
@@ -41,7 +41,7 @@
     fieldNames:(NSArray *)names;
 
 - (NSArray *)arrayOfParsedRows;
-- (void)parseRowsForReceiver:(id)aReceiver selector:(SEL)aSelector;
+- (void)parseRowsUsingBlock:(ParseRowsBlock)aBlock;
 
 - (NSArray *)parseFile;
 - (NSMutableArray *)parseHeader;
