@@ -68,6 +68,43 @@
   });
 }
 
+
+#pragma mark - Map View Delegate
+
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView
+            viewForAnnotation:(id <MKAnnotation>)annotation {
+  // If it's the user location, just return nil.
+  if ([annotation isKindOfClass:[MKUserLocation class]]) {
+    return nil;
+  }
+  
+  // Handle any custom annotations.
+  if ([annotation isKindOfClass:[Annotation class]]) {
+    MKPinAnnotationView* pinView = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
+    
+    if (!pinView) {
+      pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomPinAnnotationView"];
+      pinView.pinColor = MKPinAnnotationColorGreen;
+      pinView.animatesDrop = YES;
+      pinView.canShowCallout = YES;
+      
+      // Add a detail disclosure button to the callout.
+//      UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+//      [rightButton addTarget:self action:@selector(myShowDetailsMethod:)
+//            forControlEvents:UIControlEventTouchUpInside];
+//      pinView.rightCalloutAccessoryView = rightButton;
+    } else {
+      pinView.annotation = annotation;
+    }
+    
+    return pinView;
+  }
+  
+  return nil;
+}
+
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad {
