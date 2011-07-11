@@ -83,8 +83,7 @@
   // Handle any custom annotations.
   if ([annotation isKindOfClass:[Annotation class]]) {
     MyAnnotationView* pin = [[MyAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"MyCustomAnnotation"];
-    //pin.image = [UIImage imageNamed:@"pin.png"];
-    //pin.centerOffset = CGPointMake(5, -10);
+    pin.fillColor = [UIColor blueColor];
 
     if (!pin) {
       pin = [[MyAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"MyCustomAnnotation"];

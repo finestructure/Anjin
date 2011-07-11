@@ -10,6 +10,9 @@
 
 @implementation MyAnnotationView
 
+@synthesize fillColor = _fillColor;
+
+
 - (id)initWithAnnotation:(id <MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier {
   self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
   if (self != nil) {
@@ -30,7 +33,7 @@
   CGFloat blur = 2;
   CGContextSetShadowWithColor(ctx, offset, blur, [[UIColor darkGrayColor] CGColor]);
   
-  [[UIColor redColor] setFill];
+  [self.fillColor setFill];
   
   CGPoint tip = CGPointMake(5, 20);
   UIBezierPath *path = [UIBezierPath bezierPath];

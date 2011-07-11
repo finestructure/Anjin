@@ -11,4 +11,6 @@
 
 @interface MyAnnotationView : MKAnnotationView
 
+@property (nonatomic, strong) UIColor *fillColor;
+
 @end
