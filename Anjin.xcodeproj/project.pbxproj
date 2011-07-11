@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5A7BC7AB13CADFB100DBBA5A /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A7BC7A913CADFB100DBBA5A /* pin.png */; };
+		5A7BC7AF13CB193300DBBA5A /* MyAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7BC7AE13CB193300DBBA5A /* MyAnnotationView.m */; };
 		5ABE343C13C85C21009535AE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ABE343B13C85C21009535AE /* UIKit.framework */; };
 		5ABE343E13C85C21009535AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ABE343D13C85C21009535AE /* Foundation.framework */; };
 		5ABE344013C85C21009535AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ABE343F13C85C21009535AE /* CoreGraphics.framework */; };
@@ -35,6 +36,8 @@
 
 /* Begin PBXFileReference section */
 		5A7BC7A913CADFB100DBBA5A /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
+		5A7BC7AD13CB193300DBBA5A /* MyAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; path = MyAnnotationView.h; sourceTree = "<group>"; };
+		5A7BC7AE13CB193300DBBA5A /* MyAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnnotationView.m; sourceTree = "<group>"; };
 		5ABE343713C85C21009535AE /* Anjin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Anjin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ABE343B13C85C21009535AE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5ABE343D13C85C21009535AE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -135,6 +138,8 @@
 				5ABE345113C85C21009535AE /* AnjinViewController.xib */,
 				5ABE346113C8628E009535AE /* Annotation.h */,
 				5ABE346213C8628E009535AE /* Annotation.m */,
+				5A7BC7AD13CB193300DBBA5A /* MyAnnotationView.h */,
+				5A7BC7AE13CB193300DBBA5A /* MyAnnotationView.m */,
 				5ABE344213C85C21009535AE /* Supporting Files */,
 				5ABE346413C8687E009535AE /* NSString+ParsingExtensions.h */,
 				5ABE346513C8687E009535AE /* NSString+ParsingExtensions.m */,
@@ -288,6 +293,7 @@
 				5ABE345013C85C21009535AE /* AnjinViewController.m in Sources */,
 				5ABE346313C8628E009535AE /* Annotation.m in Sources */,
 				5ABE346613C8687E009535AE /* NSString+ParsingExtensions.m in Sources */,
+				5A7BC7AF13CB193300DBBA5A /* MyAnnotationView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

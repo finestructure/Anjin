@@ -8,6 +8,7 @@
 
 #import "AnjinViewController.h"
 #import "Annotation.h"
+#import "MyAnnotationView.h"
 #import "NSString+ParsingExtensions.h"
 
 @implementation AnjinViewController
@@ -81,12 +82,12 @@
   
   // Handle any custom annotations.
   if ([annotation isKindOfClass:[Annotation class]]) {
-    MKAnnotationView* pin = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"MyCustomAnnotation"];
-    pin.image = [UIImage imageNamed:@"pin.png"];
-    pin.centerOffset = CGPointMake(5, -10);
+    MyAnnotationView* pin = [[MyAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"MyCustomAnnotation"];
+    //pin.image = [UIImage imageNamed:@"pin.png"];
+    //pin.centerOffset = CGPointMake(5, -10);
 
     if (!pin) {
-      pin = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"MyCustomAnnotation"];
+      pin = [[MyAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"MyCustomAnnotation"];
       
       // Add a detail disclosure button to the callout.
 //      UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
