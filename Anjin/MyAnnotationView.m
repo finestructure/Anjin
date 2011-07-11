@@ -34,6 +34,7 @@
   CGContextSetShadowWithColor(ctx, offset, blur, [[UIColor darkGrayColor] CGColor]);
   
   [self.fillColor setFill];
+  [[UIColor blackColor] setStroke];
   
   CGPoint tip = CGPointMake(5, 20);
   UIBezierPath *path = [UIBezierPath bezierPath];
@@ -42,6 +43,7 @@
   [path addLineToPoint:CGPointMake(tip.x, tip.y)];
   [path closePath];
   [path fill];
+  [path stroke];
 }
 
 
