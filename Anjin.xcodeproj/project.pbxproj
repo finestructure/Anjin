@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5A7BC7AB13CADFB100DBBA5A /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A7BC7A913CADFB100DBBA5A /* pin.png */; };
 		5A7BC7AF13CB193300DBBA5A /* MyAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7BC7AE13CB193300DBBA5A /* MyAnnotationView.m */; };
+		5A990DF413CB4D9C0068C589 /* kunden_mac.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5A990DF313CB4D9C0068C589 /* kunden_mac.csv */; };
+		5A990DF613CB50C30068C589 /* kunden_win.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5A990DF513CB50C30068C589 /* kunden_win.csv */; };
 		5ABE343C13C85C21009535AE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ABE343B13C85C21009535AE /* UIKit.framework */; };
 		5ABE343E13C85C21009535AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ABE343D13C85C21009535AE /* Foundation.framework */; };
 		5ABE344013C85C21009535AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ABE343F13C85C21009535AE /* CoreGraphics.framework */; };
@@ -36,8 +38,10 @@
 
 /* Begin PBXFileReference section */
 		5A7BC7A913CADFB100DBBA5A /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
-		5A7BC7AD13CB193300DBBA5A /* MyAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; path = MyAnnotationView.h; sourceTree = "<group>"; };
+		5A7BC7AD13CB193300DBBA5A /* MyAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAnnotationView.h; sourceTree = "<group>"; };
 		5A7BC7AE13CB193300DBBA5A /* MyAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnnotationView.m; sourceTree = "<group>"; };
+		5A990DF313CB4D9C0068C589 /* kunden_mac.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = kunden_mac.csv; sourceTree = "<group>"; };
+		5A990DF513CB50C30068C589 /* kunden_win.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = kunden_win.csv; sourceTree = "<group>"; };
 		5ABE343713C85C21009535AE /* Anjin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Anjin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ABE343B13C85C21009535AE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5ABE343D13C85C21009535AE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -161,6 +165,8 @@
 		5ABE348213C86EFE009535AE /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				5A990DF313CB4D9C0068C589 /* kunden_mac.csv */,
+				5A990DF513CB50C30068C589 /* kunden_win.csv */,
 				5ABE348813C86EFE009535AE /* Test.h */,
 				5ABE348A13C86EFE009535AE /* Test.m */,
 				5ABE348313C86EFE009535AE /* Supporting Files */,
@@ -262,6 +268,8 @@
 				5ABE348713C86EFE009535AE /* InfoPlist.strings in Resources */,
 				5ABE348913C86EFE009535AE /* Test.h in Resources */,
 				5ABE349013C8709B009535AE /* kunden.csv in Resources */,
+				5A990DF413CB4D9C0068C589 /* kunden_mac.csv in Resources */,
+				5A990DF613CB50C30068C589 /* kunden_win.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
